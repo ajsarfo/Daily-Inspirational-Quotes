@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="binding"
+            type="com.cardnotes.inspirationalquotes.application.binding.MainBlockBinding" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/first_card"
+            android:layout_width="0dp"
+            android:layout_height="128dp"
+            app:layout_constraintEnd_toStartOf="@+id/second_card"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:cardBackgroundColor="@color/color_loading_indicator_grey">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="12dp"
+                android:onClick="@{() -> binding.getBlock(0).clicked()}"
+                app:cardCornerRadius="@dimen/layout_main_card_corner_radius"
+                app:cardElevation="@dimen/layout_main_card_elevation"
+                app:color="@{binding.getBlock(0).color}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/raleway_semi_bold"
+                        android:gravity="center"
+                        android:shadowColor="@color/black_overlay"
+                        android:shadowDx="4"
+                        android:shadowDy="4"
+                        android:shadowRadius="6"
+                        android:text="@{binding.getBlock(0).content()}"
+                        android:textColor="@android:color/white"
+                        android:textSize="15.2sp"
+                        tools:text="Albert Einstein" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/second_card"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/layout_main_small_card_height"
+
+            app:layout_constraintBottom_toBottomOf="@+id/first_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/first_card"
+            tools:cardBackgroundColor="@color/color_loading_indicator_grey">
+
+           <com.google.android.material.card.MaterialCardView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:gravity="center"
+                   android:orientation="vertical"
+                   android:padding="16dp">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/raleway_semi_bold"
+                       android:gravity="center"
+                       android:shadowColor="@color/black_overlay"
+                       android:shadowDx="4"
+                       android:shadowDy="4"
+                       android:shadowRadius="6"
+                       android:text="@{binding.getBlock(1).content()}"
+                       android:textColor="@android:color/white"
+                       android:textSize="15.2sp"
+                       tools:text="Albert Einstein" />
+               </LinearLayout>
+           </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/third_card"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/layout_main_small_card_height"
+
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{() -> binding.getBlock(2).clicked()}"
+            app:cardCornerRadius="@dimen/layout_main_card_corner_radius"
+            app:cardElevation="@dimen/layout_main_card_elevation"
+            app:color="@{binding.getBlock(2).color}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/first_card"
+            app:layout_constraintStart_toStartOf="@+id/first_card"
+            app:layout_constraintTop_toBottomOf="@+id/first_card"
+            tools:cardBackgroundColor="@color/color_loading_indicator_grey">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_semi_bold"
+                    android:gravity="center"
+                    android:shadowColor="@color/black_overlay"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="6"
+                    android:text="@{binding.getBlock(2).content()}"
+                    android:textColor="@android:color/white"
+                    android:textSize="15.2sp"
+                    tools:text="Albert Einstein" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/forth_card"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/layout_main_small_card_height"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="@{() -> binding.getBlock(3).clicked()}"
+            app:cardElevation="@dimen/layout_main_card_elevation"
+            app:cardCornerRadius="@dimen/layout_main_card_corner_radius"
+            app:color="@{binding.getBlock(3).color}"
+            app:layout_constraintBottom_toBottomOf="@+id/third_card"
+            app:layout_constraintEnd_toEndOf="@+id/second_card"
+            app:layout_constraintStart_toStartOf="@+id/second_card"
+            tools:cardBackgroundColor="@color/color_loading_indicator_grey">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/black_overlay"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="6"
+                    android:fontFamily="@font/raleway_semi_bold"
+                    android:gravity="center"
+                    android:text="@{binding.getBlock(3).content()}"
+                    android:textColor="@android:color/white"
+                    android:textSize="15.2sp"
+                    tools:text="Albert Einstein" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

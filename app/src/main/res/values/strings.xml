@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Daily Inspirational Quotes</string>
+
+    <string name="appodeal_app_id">a8e014b3caf1b66f7ce74ca38bfedf61d3207a58f9947e4e</string>
+
+    <string name="app_share_message">"Hi! Take a look at this amazing app Daily Inspiration Quotes. Its free!! You should get it too."</string>
+    <string name="preparing_quotes">Preparing Quotes</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="favorite">Favorite</string>
+    <string name="love">Love</string>
+    <string name="proverbs">Proverbs</string>
+    <string name="popular">Popular</string>
+    <string name="communicate">Communicate</string>
+    <string name="settings">Settings</string>
+    <string name="rate">Rate</string>
+    <string name="share">Share</string>
+    <string name="more_apps">More Apps</string>
+
+    <string name="vibrate">Vibrate</string>
+    <string name="vibrate_subtitle">Vibrate on key pressed</string>
+
+    <string name="night_mode">Use Night Mode</string>
+    <string name="night_mode_subtitle">Change whiteness to dark sight</string>
+
+    <string name="gradient_background">Gradient Background</string>
+    <string name="gradient_background_subtitle">Use plain gradient background\nfor quotes</string>
+
+    <string name="show_author_name">Show Author Name</string>
+    <string name="show_author_name_subtitle">Show author name below\nthe quote(if available)</string>
+
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="enable_notifications_subtitle">Receive daily notifications at specific\ntime</string>
+
+    <string name="set_remainder_time">Set Remainder Time</string>
+    <string name="set_remainder_time_subtitle">8:00AM</string>
+
+    <string name="general">General</string>
+    <string name="notification">Notification</string>
+    <string name="pager_image">pager_image</string>
+</resources>

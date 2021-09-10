@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/new_year"
+            android:title="New Year Quotes"
+            android:icon="@drawable/new_year"/>
+
+        <item
+            android:id="@+id/thanksgiving"
+            android:title="Thanksgiving Quotes"
+            android:icon="@drawable/thanksgiving"/>
+
+        <item
+            android:id="@+id/wedding_wishes"
+            android:title="Wedding Wishes Quotes"
+            android:icon="@drawable/wedding"/>
+    </group>
+
+    <group>
+        <item android:title="@string/communicate">
+            <menu>
+                <item
+                    android:id="@+id/settings"
+                    android:title="@string/settings"
+                    android:icon="@drawable/ic_new_settings" />
+
+                <item
+                    android:id="@+id/rate"
+                    android:title="@string/rate"
+                    android:icon="@drawable/rate"/>
+
+                <item
+                    android:id="@+id/share"
+                    android:title="@string/share"
+                    android:icon="@drawable/ic_new_share"/>
+
+                <item
+                    android:id="@+id/more_apps"
+                    android:title="@string/more_apps"
+                    android:icon="@drawable/ic_new_find"/>
+            </menu>
+        </item>
+    </group>
+</menu>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="category_image_size">64dp</dimen>
+    <dimen name="main_toolbar_image_size">34dp</dimen>
+    <dimen name="main_toolbar_icon_size">32dp</dimen>
+
+    <dimen name="main_toolbar_heading_height">32dp</dimen>
+
+    <dimen name="list_card_layout_height">440dp</dimen>
+    <dimen name="main_card_elevation">6dp</dimen>
+    <dimen name="list_card_elevation">8dp</dimen>
+    <dimen name="main_card_corner_radius">14dp</dimen>
+    <dimen name="list_card_corner_radius">6dp</dimen>
+    <dimen name="bottom_layout_height">54dp</dimen>
+    <dimen name="bottom_layout_item_size">21dp</dimen>
+
+    <dimen name="bottom_quote_layout_card_size">44dp</dimen>
+
+    <dimen name="loading_indicator_size">6dp</dimen>
+    <dimen name="loading_indicator_margin">3dp</dimen>
+
+    <dimen name="layout_main_card_elevation">14dp</dimen>
+    <dimen name="layout_main_card_corner_radius">8dp</dimen>
+    <dimen name="layout_main_small_card_height">130dp</dimen>
+    <dimen name="layout_main_long_card_height">180dp</dimen>
+    <dimen name="app_card_margin_left_right">8dp</dimen>
+
+    <dimen name="main_card_height_small">108dp</dimen>
+    <dimen name="main_card_height_big">164dp</dimen>
+</resources>

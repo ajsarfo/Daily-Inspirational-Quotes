@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.cardnotes.inspirationalquotes">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:node="remove"/>
+
+    <queries>
+        <package android:name="com.android.vending" />
+    </queries>
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WisdomLessons"
+        android:name="com.cardnotes.inspirationalquotes.application.App">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3112561146803951~9015458357"/>
+
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.StartActivity"
+            android:screenOrientation="portrait">
+          <intent-filter>
+              <action android:name="android.intent.action.MAIN" />
+              <category android:name="android.intent.category.LAUNCHER" />
+          </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.LoadActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.MainActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.PagingBlockActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.PagingSingleActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.FavoriteActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.PagingRepActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.QuoteActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.RepActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cardnotes.inspirationalquotes.application.activity.SettingsActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.cardnotes.inspirationalquotes.application.reciever.ActionReceiver"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.cardnotes.inspirationalquotes.application.reciever.AlarmReceiver"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="binding"
+            type="com.cardnotes.inspirationalquotes.application.binding.MainPagerBinding.IndicatorBinding" />
+    </data>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp">
+
+        <ImageView
+            android:id="@+id/indicator_selected"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:visibility="@{binding.selected}"
+            android:src="@drawable/pager_indicator_unselected"/>
+
+        <ImageView
+            android:id="@+id/indicator_unselected"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:visibility="@{binding.unselected}"
+            android:src="@drawable/pager_indicator_selected"/>
+    </FrameLayout>
+</layout>

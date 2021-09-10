@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="binding"
+            type="com.cardnotes.inspirationalquotes.application.binding.RepItemBinding" />
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{() -> binding.onClick()}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+               <FrameLayout
+                   android:layout_width="60dp"
+                   android:layout_height="60dp">
+
+                   <com.google.android.material.imageview.ShapeableImageView
+                       android:layout_height="match_parent"
+                       android:layout_width="match_parent"
+                       app:shapeAppearanceOverlay="@style/CornerSize50Percent"
+                       app:imageColor="@{binding.color}"
+                       tools:cardBackgroundColor="#924A00"/>
+
+                   <com.google.android.material.textview.MaterialTextView
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_margin="8dp"
+                       android:fontFamily="@font/raleway_semi_bold"
+                       android:textColor="@android:color/white"
+                       android:textSize="24sp"
+                       android:text="@{binding.initial}"
+                       android:gravity="center"
+                       tools:text="WW"
+                       tools:textColor="@color/black"/>
+
+               </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/materialTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/raleway_semi_bold"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:text="@{binding.title}"
+                        tools:text="Albert Einstein" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/raleway_semi_bold"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="14sp"
+                        android:text="@{binding.subtitle}"
+                        tools:text="Quotes" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="92dp"
+                android:layout_height="0dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_grey_divider" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

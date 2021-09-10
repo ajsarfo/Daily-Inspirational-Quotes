@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.WisdomLessons" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:colorBackground">@color/activity_background</item>
+        <item name="android:windowBackground">?android:attr/colorBackground</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/textColorPrimary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccent</item>
+        <item name="colorSurface">@color/colorSurface</item>
+
+        <!-- App colors -->
+        <item name="appToolbarColor">?attr/colorPrimary</item>
+        <item name="appCustomToolbarColor">@color/color_primary</item>
+        <item name="appToolbarTitleColor">@color/white</item>
+        <item name="appCustomToolbarTitleColor">@android:color/white</item>
+        <item name="appCustomToolbarNavIconColor">?attr/appCustomToolbarTitleColor</item>
+        <item name="appBgColor">?attr/backgroundColor</item>
+        <item name="appRandomQuoteBgColor">#187E82</item>
+        <item name="appRandomQuoteTextColor">@color/color_category_text_gray</item>
+        <item name="appRandomQuoteSizeColor">@android:color/black</item>
+        <item name="appCategoryColor">?attr/colorOnSurface</item>
+        <item name="appListQuoteColor">@color/white</item>
+    </style>
+</resources>
