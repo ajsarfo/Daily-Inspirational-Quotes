@@ -7,8 +7,6 @@ import androidx.activity.viewModels
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
-import com.appodeal.ads.Appodeal
-import com.appodeal.ads.Native
 import com.cardnotes.inspirationalquotes.R
 import com.cardnotes.inspirationalquotes.application.ApplicationScope
 import com.cardnotes.inspirationalquotes.application.binding.*
@@ -18,8 +16,9 @@ import com.cardnotes.inspirationalquotes.application.file.moreApps
 import com.cardnotes.inspirationalquotes.application.file.rateApp
 import com.cardnotes.inspirationalquotes.application.file.share
 import com.cardnotes.inspirationalquotes.application.file.toast
+import com.cardnotes.inspirationalquotes.application.manger.AdCountManager
 import com.cardnotes.inspirationalquotes.application.manger.AppReviewManager
-import com.cardnotes.inspirationalquotes.application.manger.InterstitialManager
+import com.cardnotes.inspirationalquotes.application.manger.BannerManager
 import com.cardnotes.inspirationalquotes.application.tools.Colors
 import com.cardnotes.inspirationalquotes.application.tools.LoadingDialog
 import com.cardnotes.inspirationalquotes.data.application.QuoteRep
@@ -53,28 +52,21 @@ class MainActivity : AppBarsBaseActivity() {
         LoadingDialog(this)
     }
 
-    private val interstitialManager by lazy {
-        InterstitialManager(
-            this,
-            networkManager,
-            listOf(1, 3, 4, 3)
-        )
-    }
-
     private var exitApp = false
+
+    override fun createAdCounterManager(): AdCountManager {
+        return AdCountManager(listOf(1, 3, 4, 3))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        //Initialize Appodeal
-        Appodeal.setBannerViewId(R.id.main_banner)
-        Appodeal.initialize(
-            this,
-            getString(R.string.appodeal_app_id),
-            Appodeal.BANNER_VIEW or Appodeal.INTERSTITIAL
+        /*************** Admob Configuration ********************/
+        BannerManager(this, adRequestBuilder).attachBannerAd(
+            getString(R.string.admob_banner_main),
+            binding.mainBanner
         )
-
+        /**********************************************************/
         loadingDialog.show()
         //Trigger app review on launch
         lifecycleScope.launchWhenCreated {
@@ -268,13 +260,13 @@ class MainActivity : AppBarsBaseActivity() {
 
     override fun navigate(destination: Destination) {
         when (destination) {
-            Destination.LIST -> interstitialManager.showAd {
+            Destination.LIST -> interstitialManager?.showAd {
                 navigateToDestination(PagingBlockActivity::class.java, getQuoteRepBundle())
             }
-            Destination.SINGLE -> interstitialManager.showAd {
+            Destination.SINGLE -> interstitialManager?.showAd {
                 navigateToDestination(PagingSingleActivity::class.java, getSingleBundle())
             }
-            Destination.REP -> interstitialManager.showAd {
+            Destination.REP -> interstitialManager?.showAd {
                 navigateToDestination(RepActivity::class.java, getRepListBundle())
             }
             Destination.FAVORITE -> {
@@ -286,7 +278,6 @@ class MainActivity : AppBarsBaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        Appodeal.show(this, Appodeal.BANNER_VIEW)
         viewModel.viewModelScope.launch(Dispatchers.IO) {
             ApplicationScope.getInstance(repository).execute()
         }

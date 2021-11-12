@@ -18,12 +18,15 @@ import com.cardnotes.inspirationalquotes.application.image.BitmapImageLoader
 import com.cardnotes.inspirationalquotes.application.image.ImageStore
 import com.cardnotes.inspirationalquotes.application.listener.NavigationListener
 import com.cardnotes.inspirationalquotes.application.listener.StatusNavigationListener
+import com.cardnotes.inspirationalquotes.application.manger.AdCountManager
+import com.cardnotes.inspirationalquotes.application.manger.InterstitialManager
 import com.cardnotes.inspirationalquotes.application.manger.NetworkManager
 import com.cardnotes.inspirationalquotes.data.database.entity.Author
 import com.cardnotes.inspirationalquotes.data.database.entity.Category
 import com.cardnotes.inspirationalquotes.data.database.entity.Love
 import com.cardnotes.inspirationalquotes.data.database.entity.Proverb
 import com.cardnotes.inspirationalquotes.data.repository.Repository
+import com.google.android.gms.ads.AdRequest
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -46,6 +49,33 @@ abstract class BaseActivity : AppCompatActivity(), StatusNavigationListener, Nav
     @Inject
     lateinit var container: Container
     /////////////////////////////////////
+
+
+    protected val adRequestBuilder: AdRequest by lazy {
+        AdRequest.Builder().build()
+    }
+
+    protected var interstitialManager: InterstitialManager? = null
+
+    protected open fun canShowInterstitial() : Boolean = true
+
+    protected open fun createAdCounterManager() : AdCountManager {
+        return AdCountManager(listOf(1, 4, 3))
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //Load interstitial if required by extending activity
+        if(!canShowInterstitial()) return
+        interstitialManager = InterstitialManager(
+            this,
+            getString(R.string.admob_interstitial_id),
+            networkManager,
+            createAdCounterManager(),
+            adRequestBuilder
+        )
+        interstitialManager?.load()
+    }
 
     protected fun removeStatusBarBackgroundLight() {
         when {

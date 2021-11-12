@@ -30,6 +30,10 @@ class SettingsActivity : AppBarsBaseActivity() {
 
     private val viewModel by viewModels<SettingsViewModel>()
 
+    override fun canShowInterstitial(): Boolean {
+        return false
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

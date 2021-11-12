@@ -9,6 +9,7 @@ import com.cardnotes.inspirationalquotes.R
 import com.cardnotes.inspirationalquotes.SHOW_AUTHOR
 import com.cardnotes.inspirationalquotes.application.adapter.ListItemAdapter
 import com.cardnotes.inspirationalquotes.application.cache.ImageCache
+import com.cardnotes.inspirationalquotes.application.manger.BannerManager
 import com.cardnotes.inspirationalquotes.readSettings
 import com.cardnotes.inspirationalquotes.viewmodel.FavoriteViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,6 +35,12 @@ class FavoriteActivity : BaseListActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /*************** Admob Configuration ********************/
+        BannerManager(this, adRequestBuilder).attachBannerAd(
+            getString(R.string.admob_banner_favorite),
+            binding.mainBanner
+        )
+        /**********************************************************/
         lifecycleScope.launchWhenStarted {
             viewModel.quoteList.observe(this@FavoriteActivity) {
                 listAdapter.submitData(it)

@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">Daily Inspirational Quotes</string>
 
-    <string name="appodeal_app_id">a8e014b3caf1b66f7ce74ca38bfedf61d3207a58f9947e4e</string>
-
     <string name="app_share_message">"Hi! Take a look at this amazing app Daily Inspiration Quotes. Its free!! You should get it too."</string>
     <string name="preparing_quotes">Preparing Quotes</string>
     <string name="please_wait">Please Wait</string>
@@ -37,4 +35,31 @@
     <string name="general">General</string>
     <string name="notification">Notification</string>
     <string name="pager_image">pager_image</string>
+
+    <string name="admob_test_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_test_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+
+
+   <!--
+    <string name="admob_interstitial_id">@string/admob_test_interstitial_id</string>
+
+    <string name="admob_banner_main">@string/admob_test_banner_id</string>
+    <string name="admob_banner_quote">@string/admob_test_banner_id</string>
+    <string name="admob_banner_favorite">@string/admob_test_banner_id</string>
+    <string name="admob_banner_rep">@string/admob_test_banner_id</string>
+    <string name="admob_banner_paging_block">@string/admob_test_banner_id</string>
+    <string name="admob_banner_paging_rep">@string/admob_test_banner_id</string>
+    <string name="admob_banner_paging_single">@string/admob_test_banner_id</string>
+   -->
+
+
+     <string name="admob_interstitial_id">ca-app-pub-6150813452529727/1694936100</string>
+
+     <string name="admob_banner_main">ca-app-pub-6150813452529727/9867448909</string>
+     <string name="admob_banner_quote">ca-app-pub-6150813452529727/4231978848</string>
+     <string name="admob_banner_favorite">ca-app-pub-6150813452529727/3848835466</string>
+     <string name="admob_banner_rep">ca-app-pub-6150813452529727/3922995260</string>
+     <string name="admob_banner_paging_block">ca-app-pub-6150813452529727/5133996972</string>
+     <string name="admob_banner_paging_rep">ca-app-pub-6150813452529727/3928726517</string>
+     <string name="admob_banner_paging_single">ca-app-pub-6150813452529727/4858664808</string>
 </resources>

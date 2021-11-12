@@ -26,6 +26,10 @@ class LoadActivity : AppBarsBaseActivity() {
         )
     }
 
+    override fun canShowInterstitial(): Boolean {
+        return false
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lifecycleScope.launchWhenCreated {

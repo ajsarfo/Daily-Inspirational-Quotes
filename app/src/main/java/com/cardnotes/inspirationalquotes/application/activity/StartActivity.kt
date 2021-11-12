@@ -6,14 +6,16 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
 import com.cardnotes.inspirationalquotes.*
 import com.cardnotes.inspirationalquotes.application.enums.Destination
-import com.cardnotes.inspirationalquotes.data.repository.Repository
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class StartActivity : AppBarsBaseActivity() {
+
+    override fun canShowInterstitial(): Boolean {
+        return false
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         lifecycleScope.launch {  savedInstanceState ?: configureDarkMode() }

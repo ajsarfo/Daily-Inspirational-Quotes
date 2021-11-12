@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.appodeal.ads.Appodeal
+import com.cardnotes.inspirationalquotes.R
 import com.cardnotes.inspirationalquotes.application.adapter.RepItemAdapter
 import com.cardnotes.inspirationalquotes.application.binding.ToolbarBinding
 import com.cardnotes.inspirationalquotes.application.enums.Destination
-import com.cardnotes.inspirationalquotes.application.manger.InterstitialManager
+import com.cardnotes.inspirationalquotes.application.manger.AdCountManager
+import com.cardnotes.inspirationalquotes.application.manger.BannerManager
 import com.cardnotes.inspirationalquotes.databinding.ActivityRepBinding
 import com.cardnotes.inspirationalquotes.viewmodel.RepViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,17 +29,19 @@ class RepActivity : AppBarsBaseActivity() {
 
     private val viewModel by viewModels<RepViewModel>()
 
-    private val interstitialManager by lazy {
-        InterstitialManager(
-            this,
-            networkManager,
-            listOf(1, 3, 4, 3)
-        )
+    override fun createAdCounterManager(): AdCountManager {
+        return AdCountManager(listOf(1, 3, 4, 3))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        /*************** Admob Configuration ********************/
+        BannerManager(this, adRequestBuilder).attachBannerAd(
+            getString(R.string.admob_banner_rep),
+            binding.mainBanner
+        )
+        /**********************************************************/
         with(viewModel) {
             setBundle(intent.extras)
             init()
@@ -62,14 +65,8 @@ class RepActivity : AppBarsBaseActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        Appodeal.show(this, Appodeal.BANNER_VIEW)
-    }
-
-
     override fun navigate(destination: Destination) {
-       interstitialManager.showAd {
+       interstitialManager?.showAd {
            navigateToDestination(PagingRepActivity::class.java, getQuoteRepBundle())
        }
     }

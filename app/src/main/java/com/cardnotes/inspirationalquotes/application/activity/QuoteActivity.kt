@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.appodeal.ads.Appodeal
 import com.cardnotes.inspirationalquotes.R
 import com.cardnotes.inspirationalquotes.SHOW_GRADIENT_BACKGROUND
 import com.cardnotes.inspirationalquotes.application.binding.QuoteBinding
 import com.cardnotes.inspirationalquotes.application.cache.GradientCache
 import com.cardnotes.inspirationalquotes.application.cache.ImageCache
 import com.cardnotes.inspirationalquotes.application.cache.PictureCache
+import com.cardnotes.inspirationalquotes.application.manger.BannerManager
 import com.cardnotes.inspirationalquotes.databinding.ActivityQuoteBinding
 import com.cardnotes.inspirationalquotes.readSettings
 import com.cardnotes.inspirationalquotes.viewmodel.QuoteViewModel
@@ -24,14 +24,19 @@ class QuoteActivity : AppBarsBaseActivity() {
 
     private val viewModel by viewModels<QuoteViewModel>()
 
-    override fun onResume() {
-        super.onResume()
-        Appodeal.show(this, Appodeal.BANNER_VIEW)
+
+    override fun canShowInterstitial(): Boolean {
+        return false
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Appodeal.setBannerViewId(R.id.main_banner)
+        /*************** Admob Configuration ********************/
+        BannerManager(this, adRequestBuilder).attachBannerAd(
+            getString(R.string.admob_banner_quote),
+            binding.mainBanner
+        )
+        /**********************************************************/
         setContentView(binding.root)
         viewModel.fetchQuote()
         lifecycleScope.launchWhenCreated {

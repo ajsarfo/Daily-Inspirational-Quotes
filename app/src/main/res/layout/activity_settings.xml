@@ -34,7 +34,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true"
-                android:src="@drawable/ic_arrow_back" />
+                app:srcCompat="@drawable/ic_arrow_back" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"

@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sarfo/StudioProjects/Daily-Inspirational-Quotes/app/src/main/res/layout/activity_list.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/Sarfo/StudioProjects/Daily-Inspirational-Quotes/app/src/main/res/layout/activity_main.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/Sarfo/StudioProjects/Daily-Inspirational-Quotes/app/src/main/res/layout/activity_quote.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/Sarfo/StudioProjects/Daily-Inspirational-Quotes/app/src/main/res/layout/activity_rep.xml" value="0.17481884057971014" />
         <entry key="app/src/main/res/drawable/ic_background_change.xml" value="0.24675925925925926" />
       </map>
     </option>
